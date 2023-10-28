@@ -20,7 +20,7 @@ const {Client} = require("pg");
 let client = new Client({
   host : "db.fdruvvcuubrbhtypfxcy.supabase.co",
   user : "postgres",
-  password : "",
+  password : "mishra.mobileapp22",
   database : "postgres",
   port : 5432,
   ssl : {rejectUnauthorized : false},
@@ -118,7 +118,7 @@ app.put("/svr/mobile/:id",function(req,res,next) {
   let id = +req.params.id;
   let values = Object.values(req.body);
   console.log(values);
-  let arr = [values[0],values[1],values[2],values[3],values[4],values[5],id];
+  let arr = [values[1],values[2],values[3],values[4],values[5],values[6],id];
   let sql1 = `UPDATE mobData SET name=$1,price=$2,brand=$3,ram=$4,rom=$5,os=$6 WHERE id=$7;`;
   client.query(sql1,arr,function(err,result) {
     if(err) res.status(400).send(err);
